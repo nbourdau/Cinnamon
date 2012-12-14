@@ -1,3 +1,4 @@
+SUBDIRS = applets
 
 jsdir = $(pkgdatadir)/js
 

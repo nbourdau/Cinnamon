@@ -225,6 +225,7 @@ AC_CONFIG_FILES([
   Makefile
   data/Makefile
   js/Makefile
+  js/applets/Makefile
   js/misc/config.js
   src/Makefile
   browser-plugin/Makefile
