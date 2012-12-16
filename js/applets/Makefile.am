@@ -1,5 +1,15 @@
-appletsdir = $(pkgdatadir)/applets
 
+BUILT_SOURCES = \
+	xrandr@cinnamon.org/metadata.json
+
+CLEANFILES = $(BUILT_SOURCES)
+
+
+% : %.in
+	$(AM_V_GEN)mkdir -p $(shell dirname $@) && sed 's,<localedir>,$(LOCALEDIR),' $^ > $@
+
+appletsdir = $(pkgdatadir)/applets
+nobase_applets_DATA = $(BUILT_SOURCES)
 nobase_dist_applets_DATA = \
 	a11y@cinnamon.org/applet.js	\
 	a11y@cinnamon.org/metadata.json	\
@@ -313,5 +323,5 @@ nobase_dist_applets_DATA = \
 	workspace-switcher@cinnamon.org/applet.js	\
 	workspace-switcher@cinnamon.org/metadata.json	\
 	xrandr@cinnamon.org/applet.js	\
-	xrandr@cinnamon.org/stylesheet.css	\
-	xrandr@cinnamon.org/metadata.json
+	xrandr@cinnamon.org/stylesheet.css
+
